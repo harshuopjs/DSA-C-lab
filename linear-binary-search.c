@@ -1,5 +1,4 @@
 #include <stdio.h>
-// here we are defining linear search function
 int linearSearch(int arr[], int n, int e) {
     for (int i = 1; i <= n; i++) {
         if (arr[i] == e) {
@@ -8,7 +7,6 @@ int linearSearch(int arr[], int n, int e) {
     }
     return -1;
 }
-// here we are defining binary search function
 int binarySearch(int arr[], int l, int r, int x) {
   while (l <= r) {
     int mid = l + (r - l) / 2;
@@ -31,18 +29,27 @@ int main() {
     }
     printf("Enter the element to search: ");
     scanf("%d", &e);
-    printf("Linear Search\n");
+    int o;
+    printf("What you want to perform\n");
+    printf("Linear Search (1)\n");
+    printf("Binary Search (2)");
+    scanf("%d", &o);
+    if(o==1){
+     printf("Performing linear Search\n");
     a = linearSearch(arr, n, e);
     if (a != -1) {
         printf("%d found at position %d\n", e, a);
     } else {
         printf("%d not found in the array\n", e);
     }
-    printf("Binary Search\n");
+    }
+    if(o==2){
+    printf("Performing Binary Search\n");
       int b = binarySearch(arr, 0, n - 1, e);
       if (b == -1)
         printf("Element not found in the array.\n");
       else
         printf("Element found at index %d.\n", a);
+    }
     return 0;
 }
