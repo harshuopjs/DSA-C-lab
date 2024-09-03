@@ -1,4 +1,5 @@
 //Harsh Kumar Singh
+
 #include <stdio.h>
 #include <stdlib.h>
 struct Node {
@@ -11,10 +12,10 @@ struct Node* newNode(int data) {
     node->next = NULL;
     return node;
 }
-void insertAtBeginning(struct Node** head_ref, int new_data) {
+void insertAtBeginning(struct Node** ptr, int new_data) {
     struct Node* new_node = newNode(new_data);
-    new_node->next = *head_ref;
-    *head_ref = new_node;
+    new_node->next = *ptr;
+    *ptr = new_node;
 }
 void printList(struct Node *node) {
     while (node != NULL) {
@@ -22,6 +23,7 @@ void printList(struct Node *node) {
         node = node->next;
     }
 }
+
 int main() {
     struct Node* head = NULL;
     int n, data;
